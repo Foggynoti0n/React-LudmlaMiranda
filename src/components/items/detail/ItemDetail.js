@@ -1,7 +1,20 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Count from "./ItemCount";
-const {Data} = require ('../../../utils/Data')
+import { CartContext } from "../../cart/CartContext";
+import { useContext } from "react";
+
+
 
 const ItemDetail= ({item})=>{
+
+  const [ItemCount, setItemCount]= useState(0)
+  const test = useContext(CartContext);
+
+  const add = (qty) => {
+    setItemCount(qty);
+    test.addItems(item, qty);
+}
 
     return(
 <>
@@ -16,11 +29,17 @@ const ItemDetail= ({item})=>{
               <div className=" b col-md-8 ">
                 <div className="card-body ">
                   <h5 className="card-title">{item.title}</h5>
-                  <p className="card-text price"><small className="text-muted">{item.price}</small></p>
+                  <p className="card-text "><small className="text-muted">{item.price}</small></p>
                   <p className=" desc card-text">{item.description}</p>
-                  
+                
                 </div>
-                <Count/>
+                {
+                  ItemCount === 0
+                  ? <Count stock={item.stock} initial={1} add={add} />
+                  :<Link to = '/Cart' style ={{textDecoration:'none'}}>
+                    <a className=" goCart btn btn-outline-secondary">Ir al Carrito</a>
+                  </Link>
+                }
               </div>
             </div>
            

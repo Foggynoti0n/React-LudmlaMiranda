@@ -5,15 +5,22 @@
 
 
 header{
-    height: 150px;
+    height: 100vh;
     display: flex;
-    align-items:center;
+    flex-direction: column;
+    position:relative;
+    background-image: linear-gradient( rgba(255, 255, 255, 0.797), rgba(128, 128, 128, 0)), url("./img/di-maitland-lLDFfJ4caAU-unsplash.jpg");
+    background-position: center;
+    background-size: 100%;
+   
 }
 
 
 nav{
     width: 100%;
     font-family: 'Montserrat';
+    height: 100px;
+    
 }
 
 nav #logo{
@@ -36,13 +43,50 @@ nav #logo{
 
 #noti { position:relative;  }
 
+.s input{
+    margin-left: 10px;
+    width: 350px;
+}
+.s input:hover{
+    border: 1px solid black;
+    box-shadow: no;
+}
+.info{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+   align-items: flex-end;
+    justify-content: space-around;
+    color: rgb(87, 87, 87);
+    font-family: 'Montserrat';
+}
+
+.info h1{
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.info p{
+    text-align: center;
+}
 
 
+#ProductsTitle{
+    margin-top: 5em;
+    text-align: center;
+    font-family: 'Montserrat';
+}
+
+.Cards-container{
+    height: 280vh;
+}
 .cards{
     width: 90%;
     height: 800px;
-    
-    margin: auto;
+    margin: 4em auto 20px;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -54,7 +98,6 @@ nav #logo{
     width: 250px;
     margin-top:4em; 
   position: relative;
-    
 }
 
 .c:hover{
@@ -91,6 +134,7 @@ nav #logo{
 
 .card-open{
     width: 80%;
+    height: 100vh;
     margin: auto;
    
 }
@@ -133,4 +177,71 @@ nav #logo{
 position: absolute;
 left: 40%;
 top: 300px;
+}
+
+.goCart{
+    position: absolute;
+    top: 60%;
+    right:41%
+}
+
+.cart{
+    height: 100vh;
+}
+
+.cartDetail{
+    height: 200px;
+    width: 80%;
+}
+
+.cartDetail img{
+height: 70%;
+}
+
+.generalcontainer {
+    width: 90%;
+    margin: auto;
+}
+
+.totalInfo{
+    height: 50vh;
+}
+
+footer{
+    height: 60vh;
+    padding: 40px 30px;
+    width: 100%;
+    background-color: gray;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+.l{
+    width: 100%;
+    height: 90%;
+    justify-content: space-around;
+   
+
+}
+.footer{
+    font-family: 'Montserrat';
+    width: 28%;
+    height: 100%;
+    
+}
+.footer li{
+    list-style: none;
+    margin-top: 10px;
+    text-align: left;
+}
+.footer h4{
+    text-transform: uppercase;
+    
+}
+
+.Mp{
+    width: 100%;
+    height: 50px;
+
 }

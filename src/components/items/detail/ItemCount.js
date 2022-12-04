@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Data } from '../../../utils/Data';
 
-const Count =(item)=>{
+
+const Count =({ stock = 0, initial = 1, add })=>{
 const [rate, setRate] = useState(0);  
-const [logued, setLogued] = useState(false);
 
-let stock= 30;
+useEffect(() => {
+  setRate(initial);
+},[]);
+
 
 const addItem = () => {
 rate< stock
@@ -14,10 +16,12 @@ rate< stock
 }
 
 const deleteItem = () => {
-  rate > 0
+  rate > initial
   ?setRate(rate - 1)
   :setRate(0)
   }
+
+
 
 return(
   <div id='contador'>
@@ -31,6 +35,12 @@ return(
         <path fillRule="evenodd" d="M2 8a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11A.5.5 0 0 1 2 8Z"/>
       </svg></a>
     </span>
+  
+    {
+                rate
+                ?   <a className=" btn btn-outline-success mt-4" onClick={() => add(rate)}> Agregar </a>
+                :   <button type="button" class="btn btn-outline-secondary mt-4" disabled>Button</button>
+            }
   </div>
 )
 
